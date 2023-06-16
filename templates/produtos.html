@@ -1,0 +1,33 @@
+<!-- produtos.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Cadastrar Alunos{% endblock %}
+
+    {% block content %}
+    <h1>Lista de Produtos</h1>
+    {% if produtos %}
+        <ul>
+            {% for produto in produtos %}
+                <li>
+                    {{ produto['nome'] }} -
+                    <a href="/ver-produto/{{ loop.index0 }}">Detalhes</a> 
+                    <a href="/editar-produto/{{ loop.index0 }}">Editar</a> 
+                    <a href="/excluir-produto/{{ loop.index0 }}">Excluir</a>
+                </li>
+            {% endfor %}
+            <br>
+            <li><a href="/cadastro-produtos">Voltar ao cadastro</canvas></a></li>
+        </ul>
+    {% else %}
+        <p>Nenhum produto cadastrado.</p>
+    {% endif %}
+
+    {% endblock %}
+</body>
+</html>

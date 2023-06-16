@@ -1,0 +1,30 @@
+<!-- cadastro.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Cadastrar Alunos{% endblock %}
+
+    {% block content %}
+
+    <h1>Cadastrar Produto</h1>
+    <form method="POST" action="/cadastro-produtos">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    {% endblock %}
+</body>
+</html>

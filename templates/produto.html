@@ -1,0 +1,25 @@
+<!-- produto.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Produto</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Cadastrar Alunos{% endblock %}
+
+    {% block content %}
+
+    {% if produto %}
+        <h2>Detalhes sobre o produto cadastrado</h2>
+        <p>Nome: {{ produto['nome'] }}</p>
+        <p>Preço: R$ {{ produto['preco'] }}</p>
+        <p>Descrição: {{ produto['descricao'] }}</p>
+    {% else %}
+        <p>Nenhum produto cadastrado.</p>
+    {% endif %}
+
+    {% endblock %}
+</body>
+</html>
